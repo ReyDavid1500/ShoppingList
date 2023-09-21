@@ -29,7 +29,7 @@ const ShoppingListApp = () => {
       if (loggedIn) {
         const getData = async () => {
           const { data } = await axios.get(
-            "http://localhost:3001/shoppingLists",
+            "https://shopping-list-server-gold.vercel.app/shoppingLists",
             {
               headers: { Authorization: `Bearer ${loggedIn?.token}` },
             }
@@ -62,9 +62,12 @@ const ShoppingListApp = () => {
     try {
       if (!loggedIn && savedToken) {
         const fetchUserData = async () => {
-          const { data } = await axios.get("http://localhost:3001/user", {
-            headers: { Authorization: "Bearer " + savedToken },
-          });
+          const { data } = await axios.get(
+            "https://shopping-list-server-gold.vercel.app/user",
+            {
+              headers: { Authorization: "Bearer " + savedToken },
+            }
+          );
           console.log(data);
           setLoggedIn(data);
           localStorage.setItem("USER_TOKEN", data.token);

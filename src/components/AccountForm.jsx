@@ -42,7 +42,7 @@ const AccountForm = () => {
     try {
       const config = {
         method: "post",
-        url: "http://localhost:3001/register",
+        url: "https://shopping-list-server-gold.vercel.app/register",
         data: data,
       };
       const response = await axios(config);

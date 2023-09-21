@@ -78,11 +78,14 @@ function SettingMenu() {
   };
 
   const checkedAllProductBackend = async (id, ids, isChecked) => {
-    const res = await fetch(`http://localhost:3001/shoppingList/${id}/list`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ids, isChecked }),
-    });
+    const res = await fetch(
+      `https://shopping-list-server-gold.vercel.app/shoppingList/${id}/list`,
+      {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ids, isChecked }),
+      }
+    );
     return await res.json();
   };
 
@@ -95,10 +98,13 @@ function SettingMenu() {
   };
 
   const deleteShoppingListBackend = async (_id) => {
-    const res = await fetch(`http://localhost:3001/shoppingList/${_id}`, {
-      method: "DELETE",
-      headers: { "Content-Type": "application/json" },
-    });
+    const res = await fetch(
+      `https://shopping-list-server-gold.vercel.app/shoppingList/${_id}`,
+      {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+      }
+    );
     return await res.json();
   };
 
@@ -114,11 +120,14 @@ function SettingMenu() {
   };
 
   const deleteSelectedProductsBackend = async (id, ids) => {
-    const res = await fetch(`http://localhost:3001/shoppingList/${id}/list`, {
-      method: "DELETE",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ids }),
-    });
+    const res = await fetch(
+      `https://shopping-list-server-gold.vercel.app/shoppingList/${id}/list`,
+      {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ids }),
+      }
+    );
     return await res.json();
   };
 
@@ -147,15 +156,18 @@ function SettingMenu() {
   };
 
   const newSelectedListNameBackend = async (_id, name) => {
-    const res = await fetch(`http://localhost:3001/shoppingList/${_id}/name`, {
-      method: "PATCH",
-      body: JSON.stringify({
-        name: name,
-      }),
-      headers: {
-        "Content-type": "application/json",
-      },
-    });
+    const res = await fetch(
+      `https://shopping-list-server-gold.vercel.app/shoppingList/${_id}/name`,
+      {
+        method: "PATCH",
+        body: JSON.stringify({
+          name: name,
+        }),
+        headers: {
+          "Content-type": "application/json",
+        },
+      }
+    );
     return await res.json();
   };
 

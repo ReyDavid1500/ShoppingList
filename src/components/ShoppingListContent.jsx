@@ -69,15 +69,18 @@ const ShoppingListContent = () => {
   };
 
   const createNewProductBackend = async (_id, name) => {
-    const res = await fetch(`http://localhost:3001/shoppingList/${_id}/list`, {
-      method: "POST",
-      body: JSON.stringify({
-        name: name,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const res = await fetch(
+      `https://shopping-list-server-gold.vercel.app/shoppingList/${_id}/list`,
+      {
+        method: "POST",
+        body: JSON.stringify({
+          name: name,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     const data = await res.json();
     return data;
   };
@@ -97,7 +100,7 @@ const ShoppingListContent = () => {
 
   const checkedProductListBackend = async (id, itemId, isChecked) => {
     const res = await fetch(
-      `http://localhost:3001/shoppingList/${id}/list/${itemId}`,
+      `https://shopping-list-server-gold.vercel.app/shoppingList/${id}/list/${itemId}`,
       {
         method: "PUT",
         headers: { "Content-Type": "application/json" },

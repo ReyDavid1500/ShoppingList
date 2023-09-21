@@ -47,7 +47,7 @@ const SignIn = () => {
     try {
       const config = {
         method: "post",
-        url: "http://localhost:3001/login",
+        url: "https://shopping-list-server-gold.vercel.app/login",
         data: data,
       };
       const response = await axios(config);

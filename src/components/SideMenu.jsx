@@ -58,16 +58,19 @@ const SideMenu = ({ isSideMenu }) => {
   };
 
   const addNewShoppingListBackend = async (name) => {
-    const res = await fetch("http://localhost:3001/shoppingList/new", {
-      method: "POST",
-      body: JSON.stringify({
-        name: name,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${loggedIn?.token}`,
-      },
-    });
+    const res = await fetch(
+      "https://shopping-list-server-gold.vercel.app/shoppingList/new",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          name: name,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${loggedIn?.token}`,
+        },
+      }
+    );
     const data = await res.json();
     return data;
   };
