@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 744.09 700" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <filter id="n">
+   <feGaussianBlur stdDeviation="3.18996"/>
+  </filter>
+  <linearGradient id="i" x1=".66047" x2=".68304" y1=".84454" y2=".23983" xlink:href="#a"/>
+  <linearGradient id="j" x1=".54292" x2=".16755" y1=".63609" y2="-.64233">
+   <stop stop-color="#c9996a" offset="0"/>
+   <stop stop-color="#c9996a" stop-opacity=".498" offset="1"/>
+   <stop stop-color="#c9996a" stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <linearGradient id="k" x1=".66537" x2=".063349" y1=".7545" y2="-.51909">
+   <stop stop-color="#ba875d" offset="0"/>
+   <stop stop-color="#f2e8e0" offset="1"/>
+   <stop stop-color="#ba875d" stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <linearGradient id="h" x1="-1.5e-5" x2=".99999" y1=".5" y2=".5" xlink:href="#a"/>
+  <linearGradient id="g" x1=".81464" x2=".84581" y1=".61978" y2=".1007" xlink:href="#a"/>
+  <linearGradient id="c" x1=".78212" x2=".077302" y1=".38758" y2=".19363">
+   <stop stop-color="#814b29" offset="0"/>
+   <stop stop-color="#a2633a" offset="1"/>
+  </linearGradient>
+  <linearGradient id="b" x1=".31394" x2=".40812" y1=".38788" y2=".64014">
+   <stop stop-color="#f8f8f8" offset="0"/>
+   <stop stop-color="#f8f8f8" stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <linearGradient id="d" x1=".5987" x2=".60166" y1=".5" y2=".18026">
+   <stop stop-color="#b8804d" offset="0"/>
+   <stop stop-color="#cd986e" offset="1"/>
+  </linearGradient>
+  <linearGradient id="f" x1=".99238" x2="-1.3e-5" y1=".498" y2=".498" xlink:href="#a"/>
+  <linearGradient id="e" x1=".83701" x2=".77557" y1=".23905" y2=".83265">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <linearGradient id="l" x1=".32153" x2=".58366" y1=".08023" y2=".81294">
+   <stop stop-color="#999" offset="0"/>
+   <stop stop-color="#e6e6e6" stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <linearGradient id="m" x1=".41643" x2=".71614" y1=".51008" y2=".71976">
+   <stop stop-color="#999" stop-opacity="0" offset="0"/>
+   <stop stop-color="#e6e6e6" offset="1"/>
+  </linearGradient>
+  <linearGradient id="a">
+   <stop stop-color="#53301a" offset="0"/>
+   <stop stop-color="#8d5632" offset="1"/>
+  </linearGradient>
+ </defs>
+ <g transform="matrix(2.012 0 0 1.5084 -406.05 -19.152)" fill-rule="evenodd">
+  <g stroke-width=".444">
+   <path d="m437.84 266.15l53.007 16.62 50.363 7.7711-74.479 60.119-31.01-19.725-64.108-25.704 66.228-39.082z" fill="url(#m)" filter="url(#n)"/>
+   <path d="m456.84 273.15l34.007 9.6201 50.363 7.7711-74.479 60.119-31.01-19.725-41.108-15.704 62.228-42.082z" fill="url(#l)"/>
+  </g>
+  <path d="m237.79 91.971l-9.8327-17.456 72.299-25.601 29.498 49.043-0.5784 17.288-91.386-23.274z" fill="url(#k)" stroke-width=".203"/>
+  <g stroke-width="0">
+   <path d="m329.25 97.905l97.941 20.875 42.057-19.181 9.7941-26.151-129.63-24.652-20.164 49.109z" fill="url(#j)"/>
+   <path d="m329.76 97.286l-0.5723 18.079 37.197 9.0393 28.613 35.592 32.619-41.807-97.858-20.903z" fill="url(#i)" stroke="url(#h)"/>
+   <path d="m329.61 97.536l-0.4894 18.079-20.938 8.7893-16.154 35.592-18.416-41.807 55.997-20.653z" fill="url(#g)" stroke="url(#f)"/>
+  </g>
+  <g stroke-linejoin="round">
+   <g fill="#c87137" stroke="#a16644" stroke-width=".5">
+    <path d="m329.65 97.449l-72.39 26.89"/>
+    <path d="m329.6 97.427l-0.6698 30.189"/>
+   </g>
+   <path d="m230.17 90.33l136.68 32.176 29.496 36.797-139.78-33.892-26.388-35.081z" fill="#a3693c" stroke="url(#e)" stroke-linecap="round" stroke-width=".811"/>
+  </g>
+  <path d="m256.58 125.31l138.88 33.553-0.7924 156.4-132.36-42.808-5.7298-147.14z" fill="url(#d)" stroke-width=".106"/>
+  <path d="m395.41 158.85l65.147-33.491-3.6482 147.82-62.258 42.076 0.7589-156.41z" fill="url(#c)" stroke-width="0"/>
+  <path d="m395.4 159.04l64.362-32.81 33.589-38.548-71.295 28.751-26.656 42.607z" fill="#71472d" stroke="url(#b)" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
+ </g>
+</svg>
