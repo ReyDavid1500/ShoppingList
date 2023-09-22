@@ -205,7 +205,7 @@ const ShoppingListContent = () => {
         <div className="flex flex-col gap-3 mt-20 mx-auto">
           <img
             className="rounded-xl"
-            src="../../../public/torbjorn-helgesen-C4FbCe4L_pw-unsplash.jpg"
+            src="https://images.unsplash.com/photo-1623265300797-4a3541e29a60?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
             width="200px"
             height="200px"
           />
@@ -218,7 +218,7 @@ const ShoppingListContent = () => {
         <div className="fixed left-[50%] top-[25%] flex flex-col gap-3 mt-20 mx-auto">
           <img
             className="rounded-xl"
-            src="../../../public/torbjorn-helgesen-C4FbCe4L_pw-unsplash.jpg"
+            src="https://images.unsplash.com/photo-1623265300797-4a3541e29a60?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
             width="200px"
             height="200px"
           />

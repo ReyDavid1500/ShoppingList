@@ -120,19 +120,9 @@ const ShoppingListApp = () => {
               <ArrowRightOnRectangleIcon className="h-6 w-6 text-black cursor-pointer" />
             </button>
           </Tooltip>
-          {/* <Tooltip title="Log In">
-            <button
-              className=" focus:bg-gray-200 focus:delay-150 focus:duration-300 focus:rounded-full hover:bg-gray-200 hover:rounded-full "
-              onClick={() => navigate("/signin")}
-              type="button"
-            >
-              <UserCircleIcon className="h-6 w-6 text-black cursor-pointer" />
-            </button>
-          </Tooltip> */}
         </div>
       </header>
       <div className="flex gap-10 p-4 w-full">
-        {/* COMPONENTE SideMenu */}
         <SideMenu isSideMenu={isSideMenu} />
         <ShoppingListContent />
       </div>
