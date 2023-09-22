@@ -29,7 +29,7 @@ const ShoppingListApp = () => {
       if (loggedIn) {
         const getData = async () => {
           const { data } = await axios.get(
-            "https://shopping-list-server-gold.vercel.app/shoppingLists",
+            "https://shoppinglist-api-ctyk.onrender.com/shoppingLists",
             {
               headers: { Authorization: `Bearer ${loggedIn?.token}` },
             }
@@ -63,7 +63,7 @@ const ShoppingListApp = () => {
       if (!loggedIn && savedToken) {
         const fetchUserData = async () => {
           const { data } = await axios.get(
-            "https://shopping-list-server-gold.vercel.app/user",
+            "https://shoppinglist-api-ctyk.onrender.com/user",
             {
               headers: { Authorization: "Bearer " + savedToken },
             }

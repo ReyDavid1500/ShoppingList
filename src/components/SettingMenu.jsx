@@ -79,7 +79,7 @@ function SettingMenu() {
 
   const checkedAllProductBackend = async (id, ids, isChecked) => {
     const res = await fetch(
-      `https://shopping-list-server-gold.vercel.app/shoppingList/${id}/list`,
+      `https://shoppinglist-api-ctyk.onrender.com/shoppingList/${id}/list`,
       {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -99,7 +99,7 @@ function SettingMenu() {
 
   const deleteShoppingListBackend = async (_id) => {
     const res = await fetch(
-      `https://shopping-list-server-gold.vercel.app/shoppingList/${_id}`,
+      `https://shoppinglist-api-ctyk.onrender.com/shoppingList/${_id}`,
       {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
@@ -121,7 +121,7 @@ function SettingMenu() {
 
   const deleteSelectedProductsBackend = async (id, ids) => {
     const res = await fetch(
-      `https://shopping-list-server-gold.vercel.app/shoppingList/${id}/list`,
+      `https://shoppinglist-api-ctyk.onrender.com/shoppingList/${id}/list`,
       {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
@@ -157,7 +157,7 @@ function SettingMenu() {
 
   const newSelectedListNameBackend = async (_id, name) => {
     const res = await fetch(
-      `https://shopping-list-server-gold.vercel.app/shoppingList/${_id}/name`,
+      `https://shoppinglist-api-ctyk.onrender.com/shoppingList/${_id}/name`,
       {
         method: "PATCH",
         body: JSON.stringify({

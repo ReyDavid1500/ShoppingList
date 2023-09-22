@@ -47,7 +47,7 @@ const SignIn = () => {
     try {
       const config = {
         method: "post",
-        url: "https://shopping-list-server-gold.vercel.app/login",
+        url: "https://shoppinglist-api-ctyk.onrender.com/login",
         data: data,
       };
       const response = await axios(config);

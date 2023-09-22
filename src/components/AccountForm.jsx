@@ -42,7 +42,7 @@ const AccountForm = () => {
     try {
       const config = {
         method: "post",
-        url: "https://shopping-list-server-gold.vercel.app/register",
+        url: "https://shoppinglist-api-ctyk.onrender.com/register",
         data: data,
       };
       const response = await axios(config);

@@ -70,7 +70,7 @@ const ShoppingListContent = () => {
 
   const createNewProductBackend = async (_id, name) => {
     const res = await fetch(
-      `https://shopping-list-server-gold.vercel.app/shoppingList/${_id}/list`,
+      `https://shoppinglist-api-ctyk.onrender.com/shoppingList/${_id}/list`,
       {
         method: "POST",
         body: JSON.stringify({
@@ -100,7 +100,7 @@ const ShoppingListContent = () => {
 
   const checkedProductListBackend = async (id, itemId, isChecked) => {
     const res = await fetch(
-      `https://shopping-list-server-gold.vercel.app/shoppingList/${id}/list/${itemId}`,
+      `https://shoppinglist-api-ctyk.onrender.com/shoppingList/${id}/list/${itemId}`,
       {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
