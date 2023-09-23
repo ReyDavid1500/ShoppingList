@@ -51,7 +51,7 @@ const AccountForm = () => {
       navigate("/signin");
     } catch (error) {
       if (error.response.status === 400) {
-        showSnackbar("Email already exists, go to Signin...");
+        showSnackbar(`${email} already exists, go to Signin...`);
       }
     }
   };
