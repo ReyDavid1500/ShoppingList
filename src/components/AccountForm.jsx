@@ -50,7 +50,9 @@ const AccountForm = () => {
       showSnackbar("Your Account has been setup Successfully...");
       navigate("/signin");
     } catch (error) {
-      console.log(error);
+      if (error.response.status === 400) {
+        showSnackbar("Email already exists, go to Signin...");
+      }
     }
   };
 

@@ -9,7 +9,6 @@ import { UserContext } from "../Contexts/UserContext";
 import { BuildingStorefrontIcon } from "@heroicons/react/24/outline";
 import { SnackbarContext } from "../Contexts/SnackbarContext";
 import { LoaderContext } from "../Contexts/LoaderContext";
-import Loader from "../components/Loader";
 
 const schema = yup.object().shape({
   email: yup.string().email().required(),

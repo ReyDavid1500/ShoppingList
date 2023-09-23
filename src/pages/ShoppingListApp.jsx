@@ -68,7 +68,6 @@ const ShoppingListApp = () => {
               headers: { Authorization: "Bearer " + savedToken },
             }
           );
-          console.log(data);
           setLoggedIn(data);
           localStorage.setItem("USER_TOKEN", data.token);
         };
