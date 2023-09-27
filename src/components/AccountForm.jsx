@@ -13,12 +13,12 @@ const schema = yup.object().shape({
   password: yup
     .string()
     .required()
-    .min(8, "Name must have over 8 characters")
+    .min(6, "Password must have over 8 characters")
     .max(20),
   validatePassword: yup
     .string()
     .required()
-    .min(8, "Name must have over 8 characters")
+    .min(6, "Password must have over 8 characters")
     .max(20)
     .oneOf([yup.ref("password")], "Passwords does not match"),
 });
