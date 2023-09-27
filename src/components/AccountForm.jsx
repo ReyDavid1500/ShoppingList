@@ -13,12 +13,12 @@ const schema = yup.object().shape({
   password: yup
     .string()
     .required()
-    .min(6, "Password must have over 8 characters")
+    .min(8, "Password must have over 8 characters")
     .max(20),
   validatePassword: yup
     .string()
     .required()
-    .min(6, "Password must have over 8 characters")
+    .min(8, "Password must have over 8 characters")
     .max(20)
     .oneOf([yup.ref("password")], "Passwords does not match"),
 });
@@ -58,7 +58,7 @@ const AccountForm = () => {
 
   const onKeyUpHandler = (e) => {
     if (e.key === "Enter") {
-      handleSubmit(onHandlerSubmit);
+      onHandlerSubmit(e);
     }
   };
 
