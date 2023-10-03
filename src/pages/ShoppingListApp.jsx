@@ -87,8 +87,6 @@ const ShoppingListApp = () => {
     showSnackbar("Has cerrado tu sesión...");
   };
 
-  //Logout función que limpie el LocalStorage y el loggedIn
-
   return (
     <div>
       <header className="flex justify-between bg-gray-100 w-full h-10 shadow-lg place-items-center">

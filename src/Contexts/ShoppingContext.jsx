@@ -15,7 +15,6 @@ const ShoppingProvider = ({ children }) => {
     setSelectedList(data);
   };
 
-  //Función que marca los productos listos con la prop isChecked
   const checkedProductList = (shoppingList) => {
     const findListIndex = backendData.findIndex(
       (list) => list._id === shoppingList._id
@@ -61,7 +60,6 @@ const ShoppingProvider = ({ children }) => {
     setSelectedList(shoppingList);
   };
 
-  //Organizar con metodo sort
   const sortProductList = (type) => {
     const sortedList = [...selectedList.list].sort((a, b) =>
       b[type] < a[type] ? 1 : -1
@@ -77,7 +75,6 @@ const ShoppingProvider = ({ children }) => {
     setBackendData(newSortedProductList);
   };
 
-  //Modificar nombre de la lista
   const newSelectedListName = (shoppingList) => {
     const findListIndex = backendData.findIndex(
       (list) => list._id === selectedList._id
@@ -89,9 +86,7 @@ const ShoppingProvider = ({ children }) => {
     setSelectedList(shoppingList);
   };
 
-  //Eliminar lista
   const deleteShoppingList = (data) => {
-    // const newShoppingLists = [...backendData];
     const findListIndex = backendData.findIndex(
       (list) => list._id === data._id
     );
@@ -104,7 +99,6 @@ const ShoppingProvider = ({ children }) => {
     }
   };
 
-  // Eliminar productos seleccionados
   const deleteSelectedProducts = (shoppingList) => {
     const findListIndex = backendData.findIndex(
       (list) => list._id === shoppingList._id

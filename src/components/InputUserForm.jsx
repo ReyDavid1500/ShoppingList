@@ -8,6 +8,7 @@ const InputUserForm = ({
   error,
   register,
   onChange,
+  onKeyUp,
 }) => {
   return (
     <div className="mb-6">
@@ -23,6 +24,7 @@ const InputUserForm = ({
         type={type}
         placeholder={placeholder}
         onChange={onChange}
+        onKeyUp={onKeyUp}
       />
       {error && <h2 className="text-red-500 text-xs font-medium">{error}</h2>}
     </div>

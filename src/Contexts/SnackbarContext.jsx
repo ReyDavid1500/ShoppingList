@@ -15,8 +15,6 @@ const SnackbarProvider = ({ children }) => {
     }, 5000);
   };
 
-  //Agragar Types
-
   return (
     <SnackbarContext.Provider value={{ snackbar, showSnackbar, setSnackbar }}>
       {children}

@@ -5,5 +5,3 @@ const SignUp = () => {
 };
 
 export default SignUp;
-
-//Aprender PASSPORT JS, para crear los JWT, Json Web Token! Autenticación, Middleware

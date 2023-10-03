@@ -120,15 +120,11 @@ const AccountForm = () => {
             <span>Sign up</span>
           </button>
           <input type="hidden" name="remember" value={true} />
-          <p className="mt-8 text-center">
-            {/* <a href="">Forgot password</a> */}
-          </p>
+          <p className="mt-8 text-center"></p>
           <p className="mt-2 text-center">
             <Link to="/signin">I have an account?</Link>
           </p>
-          <p className="text-center mt-5 font-bold underline text-blue-400">
-            {/* <Link to="/">Go back!</Link> */}
-          </p>
+          <p className="text-center mt-5 font-bold underline text-blue-400"></p>
         </form>
       </div>
     </main>
@@ -136,7 +132,3 @@ const AccountForm = () => {
 };
 
 export default AccountForm;
-
-//Comparar la validación del Password
-
-//Express con Mongo y Passport (ver tutoriales)

@@ -22,11 +22,10 @@ const ShoppingListContent = () => {
   const [showModalList2, setShowModalList2] = useState(false);
   const [newProduct, setNewProduct] = useState("");
 
-  //Ingreso de Producto por EnterKey Press
   const handleNewListItem = (e) => {
     setInputData(e.target.value);
   };
-  //Lógica del Modal
+
   const handleNewProduct = (e) => {
     setNewProduct(e.target.value);
     setModalCounter(newProduct.length);

@@ -35,12 +35,6 @@ const SignIn = () => {
 
   const navigate = useNavigate();
 
-  const onKeyUpHandler = (e) => {
-    if (e.key === "Enter") {
-      onHandlerSubmit(e);
-    }
-  };
-
   const onHandlerSubmit = async (data) => {
     setIsLoading(true);
     try {
@@ -50,7 +44,6 @@ const SignIn = () => {
         data: data,
       };
       const response = await axios(config);
-      console.log(response);
       setLoggedIn(response.data);
       localStorage.setItem("USER_TOKEN", response.data.token);
       navigate("/");
@@ -63,6 +56,13 @@ const SignIn = () => {
     setIsLoading(false);
   };
 
+  const onKeyUpHandler = (e) => {
+    e.preventDefault();
+    if (e.key === "Enter") {
+      handleSubmit(onHandlerSubmit);
+    }
+  };
+
   return (
     <main className="flex justify-center items-center min-h-screen bg-blue-50">
       <div className="flex flex-1 flex-col items-center justify-center pb-5 pt-12">
@@ -71,7 +71,6 @@ const SignIn = () => {
           Bienvenid@ a tu lista de compras, inicia tu sesión!
         </h1>
         <form
-          onKeyUp={onKeyUpHandler}
           className="w-full max-w-sm"
           onSubmit={handleSubmit(onHandlerSubmit)}
         >
@@ -90,6 +89,7 @@ const SignIn = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
           <InputUserForm
+            onKeyUp={onKeyUpHandler}
             htmlFor="password"
             id="password"
             type="password"
