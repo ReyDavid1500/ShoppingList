@@ -88,7 +88,7 @@ const ShoppingListApp = () => {
 
   return (
     <div>
-      <header className="flex justify-between bg-gray-100 w-full h-10 shadow-lg place-items-center">
+      <header className="sm:flex sm:justify-between sm:bg-gray-100 w-full sm:h-10 sm:shadow-lg sm:place-items-center sm:flex-row sm:mt-0 flex flex-col-reverse gap-2 justify-center items-center mt-5">
         <div className="flex gap-4">
           <div className="side-menu">
             <button onClick={handleSideMenuToggle}>
@@ -118,7 +118,7 @@ const ShoppingListApp = () => {
           </Tooltip>
         </div>
       </header>
-      <div className="flex gap-10 p-4 w-full">
+      <div className="sm:flex sm:gap-10 p-4 sm:w-full sm:flex-row flex flex-col gap-4">
         <SideMenu isSideMenu={isSideMenu} />
         <ShoppingListContent />
       </div>

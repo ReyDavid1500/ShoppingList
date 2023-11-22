@@ -101,10 +101,10 @@ const SideMenu = ({ isSideMenu }) => {
               <span>{modalCounter} / 200</span>
             </div>
           </Modal>
-          <aside className="w-36">
+          <aside className="sm:w-36 flex flex-col justify-center">
             <button
               onClick={() => setShowModalList1(true)}
-              className="bg-[#fff] flex gap-4 border-2 rounded-full p-3 place-items-center transition ease-in-out h-10 shadow-xl hover:opacity-50 hover:bg-blue-100 hover:translate-y-1 hover:scale-105"
+              className="bg-[#fff] flex gap-4 border-2 rounded-full p-3 place-items-center transition ease-in-out h-10 shadow-xl hover:opacity-50 hover:bg-blue-100 hover:translate-y-1 hover:scale-105 max-[640px]:w-[60vw] max-[640px]:items-center"
             >
               <PlusIcon className="h-6 w-6 text-red-500" />
               <p className="text-xs font-bold hover:text-black text-orange-600">

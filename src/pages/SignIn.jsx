@@ -25,6 +25,7 @@ const SignIn = () => {
     register,
     handleSubmit,
     formState: { errors },
+    watch,
   } = useForm({
     resolver: yupResolver(schema),
     mode: "onSubmit",
@@ -32,7 +33,9 @@ const SignIn = () => {
 
   const navigate = useNavigate();
 
-  const onHandlerSubmit = async (data) => {
+  const onHandlerSubmit = async (data, e) => {
+    e.preventDefault();
+    console.log(e);
     setIsLoading(true);
     try {
       const config = {
@@ -53,6 +56,10 @@ const SignIn = () => {
     setIsLoading(false);
   };
 
+  const onHandleInvalid = (data) => {
+    console.log(data);
+  };
+
   return (
     <main className="flex justify-center items-center min-h-screen bg-blue-50">
       <div className="flex flex-1 flex-col items-center justify-center pb-5 pt-12">
@@ -62,7 +69,7 @@ const SignIn = () => {
         <BuildingStorefrontIcon className="h-6 w-6 text-black" />
         <form
           className="w-full max-w-sm"
-          onSubmit={handleSubmit(onHandlerSubmit)}
+          onSubmit={handleSubmit(onHandlerSubmit, onHandleInvalid)}
         >
           <h1 className="mx-auto mb-6 h-6 w-auto text-slate-900 text-center text-4xl font-bold">
             Login
@@ -73,7 +80,7 @@ const SignIn = () => {
             name="email"
             type="text"
             placeholder="youremail@gmail.com"
-            title="Email Adress"
+            title="Email Address"
             register={register}
             error={errors?.email?.message}
           />
@@ -93,13 +100,13 @@ const SignIn = () => {
           >
             <span>Sign in to account</span>
           </button>
-          <input type="hidden" name="remember" value={true} />
-          <p className="mt-8 text-center"></p>
-          <p className="mt-2 text-center">
-            <Link to="/signup">Don't have an account?</Link>
-          </p>
-          <p className="text-center mt-5 font-bold underline text-blue-400"></p>
+          {/* <input type="hidden" name="remember" value={true} /> */}
         </form>
+        <p className="mt-8 text-center"></p>
+        <p className="mt-2 text-center">
+          <Link to="/signup">Don't have an account?</Link>
+        </p>
+        <p className="text-center mt-5 font-bold underline text-blue-400"></p>
       </div>
     </main>
   );
