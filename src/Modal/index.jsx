@@ -20,7 +20,9 @@ const Modal = ({
             onClick={(e) => e.stopPropagation()}
             className="bg-[#fff] rounded-lg h-40 w-96 p-5 border border-gray-500 shadow-lg mx-auto flex flex-col justify-center"
           >
-            <h1 className="text-xs font-medium mb-5">{title}</h1>
+            <h2 className="text-xs font-medium mb-5 dark:text-black">
+              {title}
+            </h2>
             {children}
             <div className="flex flex-row gap-5 justify-end text-xs p-2">
               <button

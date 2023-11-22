@@ -17,7 +17,7 @@ import DarkModeSwitch from "../components/DarkModeSwitch";
 
 const ShoppingListApp = () => {
   const [isSideMenu, setIsSideMenu] = useState(true);
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
   const { loggedIn, setLoggedIn } = useContext(UserContext);
   const { setServerData, setSelectedListData } = useContext(ShoppingContext);
@@ -25,15 +25,17 @@ const ShoppingListApp = () => {
   const { setIsLoading } = useContext(LoaderContext);
 
   useEffect(() => {
-    if (theme === "dark") {
-      document.querySelector("html").classList.add("dark");
-    } else {
-      document.querySelector("html").classList.remove("dark");
-    }
-  }, [theme]);
+    document.documentElement.classList.remove("light", "dark");
+    document.documentElement.classList.add(theme);
+
+    localStorage.setItem("theme", theme);
+  });
 
   const themeHandler = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+    const newTheme = setTheme((prevTheme) =>
+      prevTheme === "light" ? "dark" : "light"
+    );
+    return localStorage.setItem("theme", newTheme);
   };
 
   useEffect(() => {

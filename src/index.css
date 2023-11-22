@@ -6,6 +6,10 @@
   color: #fff;
 }
 
+h2 {
+  color: black;
+}
+
 .dark p,
 h3 {
   color: #b3b3b3;
