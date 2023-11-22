@@ -34,7 +34,7 @@ function SortMenu() {
               setOpenDropdown1(!openDropdown1);
             }}
           >
-            <Bars3BottomLeftIcon className="h-6 w-6 text-black " />
+            <Bars3BottomLeftIcon className="h-6 w-6 text-black dark:text-white" />
           </button>
         </Tooltip>
       </div>

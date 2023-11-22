@@ -158,11 +158,11 @@ const ShoppingListContent = () => {
           </div>
           <form className="mt-4" onSubmit={(e) => e.preventDefault()}>
             <label className="flex flex-row gap-3 mb-3">
-              <PlusIcon className="h-6 w-6 text-black inline-block" />
+              <PlusIcon className="h-6 w-6 text-black inline-block dark:text-white" />
               <input
-                className="w-full pb-2 border-solid border-b-[rgb(95,99,104)] border-b-[1px] z-[1] content-none focus:outline-none focus:border-b-[rgb(25,103,210)] focus:border-b-2 focus:transition focus:ease-linear focus:delay-150"
+                className="w-full pb-2 pl-2 pt-1 border-solid border-b-[rgb(95,99,104)] border-b-[1px] z-[1] content-none focus:outline-none focus:border-b-[rgb(25,103,210)] focus:border-b-2 focus:transition focus:ease-linear focus:delay-150 dark:rounded-lg"
                 type="text"
-                placeholder="Añadir elemento"
+                placeholder="Carne, queso, leche, ..."
                 autoComplete="off"
                 value={inputData}
                 onChange={handleNewListItem}
@@ -187,7 +187,7 @@ const ShoppingListContent = () => {
                     className="text-base font-light peer-checked:line-through"
                     htmlFor="default-checkbox"
                   >
-                    {item.name}
+                    <span className="product">{item.name}</span>
                   </label>
                 </li>
               );
@@ -195,7 +195,7 @@ const ShoppingListContent = () => {
           </ul>
           <div className="block z-[1] bottom-4 right-4 fixed">
             <button onClick={() => setShowModalList2(true)}>
-              <PlusIcon className="h-12 w-12 text-red-500 rounded-full shadow-lg border border-collapse p-3 transition-opacity hover:opacity-40 hover:bg-slate-500" />
+              <PlusIcon className="h-12 w-12 text-red-500 rounded-full shadow-lg border border-collapse p-3 transition-opacity hover:opacity-40 hover:bg-slate-500 dark:bg-white" />
             </button>
           </div>
         </main>

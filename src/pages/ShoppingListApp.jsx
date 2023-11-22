@@ -13,14 +13,28 @@ import { ShoppingContext } from "../Contexts/ShoppingContext";
 import { UserContext } from "../Contexts/UserContext";
 import { SnackbarContext } from "../Contexts/SnackbarContext";
 import { LoaderContext } from "../Contexts/LoaderContext";
+import DarkModeSwitch from "../components/DarkModeSwitch";
 
 const ShoppingListApp = () => {
+  const [isSideMenu, setIsSideMenu] = useState(true);
+  const [theme, setTheme] = useState("light");
+
   const { loggedIn, setLoggedIn } = useContext(UserContext);
   const { setServerData, setSelectedListData } = useContext(ShoppingContext);
   const { showSnackbar } = useContext(SnackbarContext);
   const { setIsLoading } = useContext(LoaderContext);
 
-  const [isSideMenu, setIsSideMenu] = useState(true);
+  useEffect(() => {
+    if (theme === "dark") {
+      document.querySelector("html").classList.add("dark");
+    } else {
+      document.querySelector("html").classList.remove("dark");
+    }
+  }, [theme]);
+
+  const themeHandler = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  };
 
   useEffect(() => {
     setIsLoading(true);
@@ -87,38 +101,41 @@ const ShoppingListApp = () => {
   };
 
   return (
-    <div>
-      <header className="sm:flex sm:justify-between bg-gray-100 w-full sm:h-10 shadow-lg sm:place-items-center sm:flex-row sm:mt-0 flex flex-col-reverse gap-2 justify-center items-center p-5">
+    <div className="h-[100vh] dark:bg-gradient-to-b from-[#404040] to-[#181818]">
+      <header className="sm:flex sm:justify-between bg-gray-100 w-full sm:h-10 shadow-lg sm:place-items-center sm:flex-row sm:mt-0 flex flex-col-reverse gap-2 justify-center items-center p-5 dark:bg-black dark:text-white">
         <div className="flex gap-4">
           <div className="side-menu">
             <button onClick={handleSideMenuToggle}>
-              <Bars3Icon className="h-6 w-6 text-black cursor-pointer hover:opacity-30" />
+              <Bars3Icon className="h-6 w-6 text-black cursor-pointer hover:opacity-30 dark:text-white" />
             </button>
           </div>
           <div className="logo">
-            <BuildingStorefrontIcon className="h-6 w-6 text-black" />
+            <BuildingStorefrontIcon className="h-6 w-6 text-black dark:text-white" />
           </div>
           <div className="titulo">
-            <p className="text-gray-500 text-xl font-medium">Lista de compra</p>
+            <p className="text-gray-500 text-xl font-medium dark:text-white">
+              Lista de compra
+            </p>
           </div>
         </div>
         <p></p>
         <div className="flex justify-center mr-6">
-          <p className="mr-2 text-sm mt-1 font-medium text-orange-600">
+          <p className="mr-2 text-sm mt-1 font-medium text-orange-600 dark:text-yellow-400">
             {loggedIn?.user?.email}
           </p>
           <Tooltip title="Logout">
             <button
-              className=" focus:bg-gray-200 focus:delay-150 focus:duration-300 focus:rounded-full hover:bg-gray-200 hover:rounded-full "
+              className=" focus:bg-gray-200 focus:delay-150 focus:duration-300 focus:rounded-full hover:bg-gray-200 hover:rounded-full dark:hover:bg-gray-500"
               onClick={handleLogout}
               type="button"
             >
-              <ArrowRightOnRectangleIcon className="h-6 w-6 text-black cursor-pointer" />
+              <ArrowRightOnRectangleIcon className="h-6 w-6 text-black cursor-pointer dark:text-white" />
             </button>
           </Tooltip>
+          <DarkModeSwitch isDarkModeOn={themeHandler} />
         </div>
       </header>
-      <div className="sm:flex sm:gap-10 p-4 sm:w-full sm:flex-row flex flex-col gap-4">
+      <div className="sm:flex sm:gap-10 p-[2rem] mt-2 sm:w-full sm:flex-row flex flex-col gap-4">
         <SideMenu isSideMenu={isSideMenu} />
         <ShoppingListContent />
       </div>

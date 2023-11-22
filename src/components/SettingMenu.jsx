@@ -234,7 +234,7 @@ function SettingMenu() {
               setOpenDropdown2(!openDropdown2);
             }}
           >
-            <EllipsisVerticalIcon className="h-6 w-6 text-black" />
+            <EllipsisVerticalIcon className="h-6 w-6 text-black dark:text-white" />
           </button>
         </Tooltip>
       </div>

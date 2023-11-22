@@ -118,7 +118,7 @@ const SideMenu = ({ isSideMenu }) => {
                     <span
                       className={`hover:bg-gray-300 p-1 rounded-lg focus:bg-gray-500 cursor-pointer ${
                         selectedList?._id === item._id &&
-                        "bg-gray-600 text-white font-bold transition-all"
+                        "bg-gray-600 dark:bg-white text-white font-bold transition-all"
                       }`}
                       data-_id={item._id}
                       onClick={handleSelectList}

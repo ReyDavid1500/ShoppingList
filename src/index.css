@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dark h1 {
+  color: #fff;
+}
+
+.dark p,
+h3 {
+  color: #b3b3b3;
+}
+
+.dark .product {
+  color: #b3b3b3;
+}
