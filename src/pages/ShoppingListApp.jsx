@@ -88,7 +88,7 @@ const ShoppingListApp = () => {
 
   return (
     <div>
-      <header className="sm:flex sm:justify-between sm:bg-gray-100 w-full sm:h-10 sm:shadow-lg sm:place-items-center sm:flex-row sm:mt-0 flex flex-col-reverse gap-2 justify-center items-center mt-5">
+      <header className="sm:flex sm:justify-between bg-gray-100 w-full sm:h-10 shadow-lg sm:place-items-center sm:flex-row sm:mt-0 flex flex-col-reverse gap-2 justify-center items-center p-5">
         <div className="flex gap-4">
           <div className="side-menu">
             <button onClick={handleSideMenuToggle}>
