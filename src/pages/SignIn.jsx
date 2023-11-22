@@ -56,24 +56,20 @@ const SignIn = () => {
     setIsLoading(false);
   };
 
-  const onHandleInvalid = (data) => {
-    console.log(data);
-  };
-
   return (
     <main className="flex justify-center items-center min-h-screen bg-blue-50">
       <div className="flex flex-1 flex-col items-center justify-center pb-5 pt-12 max-[500px]:p-10">
-        <h1 className="mb-8 font-medium text-xl max-[500px]:text-center">
+        <h2 className="mb-8 font-medium text-xl max-[500px]:text-center">
           Bienvenid@ a tu lista de compras, inicia tu sesión!
-        </h1>
+        </h2>
         <BuildingStorefrontIcon className="h-6 w-6 text-black" />
         <form
           className="w-full max-w-sm"
-          onSubmit={handleSubmit(onHandlerSubmit, onHandleInvalid)}
+          onSubmit={handleSubmit(onHandlerSubmit)}
         >
-          <h1 className="mx-auto mb-6 h-6 w-auto text-slate-900 text-center text-4xl font-bold">
+          <h2 className="mx-auto mb-6 h-6 w-auto text-slate-900 text-center text-4xl font-bold">
             Login
-          </h1>
+          </h2>
           <InputUserForm
             htmlFor="email"
             id="email"
@@ -100,7 +96,6 @@ const SignIn = () => {
           >
             <span>Sign in to account</span>
           </button>
-          {/* <input type="hidden" name="remember" value={true} /> */}
         </form>
         <p className="mt-8 text-center"></p>
         <p className="mt-2 text-center">

@@ -57,9 +57,9 @@ const SignUp = () => {
           className="w-full max-w-sm"
           onSubmit={handleSubmit(onHandlerSubmit)}
         >
-          <h1 className="mx-auto mb-6 h-6 w-auto text-slate-900 text-center text-4xl font-bold">
+          <h2 className="mx-auto mb-6 h-6 w-auto text-slate-900 text-center text-4xl font-bold">
             SignUp
-          </h1>
+          </h2>
           <InputUserForm
             register={register}
             id="name"
@@ -104,7 +104,6 @@ const SignUp = () => {
           >
             <span>Sign up</span>
           </button>
-          <input type="hidden" name="remember" value={true} />
           <p className="mt-8 text-center"></p>
           <p className="mt-2 text-center">
             <Link to="/signin">I have an account?</Link>
