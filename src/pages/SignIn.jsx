@@ -62,8 +62,8 @@ const SignIn = () => {
 
   return (
     <main className="flex justify-center items-center min-h-screen bg-blue-50">
-      <div className="flex flex-1 flex-col items-center justify-center pb-5 pt-12">
-        <h1 className="mb-8 font-medium text-xl">
+      <div className="flex flex-1 flex-col items-center justify-center pb-5 pt-12 max-[500px]:p-10">
+        <h1 className="mb-8 font-medium text-xl max-[500px]:text-center">
           Bienvenid@ a tu lista de compras, inicia tu sesión!
         </h1>
         <BuildingStorefrontIcon className="h-6 w-6 text-black" />
