@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import InputUserForm from "../components/InputUserForm";
 import { useForm } from "react-hook-form";
@@ -16,21 +16,18 @@ const schema = yup.object().shape({
 });
 
 const SignIn = () => {
-  const { setLoggedIn, loggedIn } = useContext(UserContext);
+  const { setLoggedIn } = useContext(UserContext);
 
   const { showSnackbar } = useContext(SnackbarContext);
-  const { setIsLoading, isLoading } = useContext(LoaderContext);
-
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const { setIsLoading } = useContext(LoaderContext);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
   } = useForm({
     resolver: yupResolver(schema),
+    mode: "onSubmit",
   });
 
   const navigate = useNavigate();
@@ -56,20 +53,13 @@ const SignIn = () => {
     setIsLoading(false);
   };
 
-  const onKeyUpHandler = (e) => {
-    e.preventDefault();
-    if (e.key === "Enter") {
-      handleSubmit(onHandlerSubmit);
-    }
-  };
-
   return (
     <main className="flex justify-center items-center min-h-screen bg-blue-50">
       <div className="flex flex-1 flex-col items-center justify-center pb-5 pt-12">
-        <BuildingStorefrontIcon className="h-6 w-6 text-black" />
         <h1 className="mb-8 font-medium text-xl">
           Bienvenid@ a tu lista de compras, inicia tu sesión!
         </h1>
+        <BuildingStorefrontIcon className="h-6 w-6 text-black" />
         <form
           className="w-full max-w-sm"
           onSubmit={handleSubmit(onHandlerSubmit)}
@@ -82,28 +72,24 @@ const SignIn = () => {
             id="email"
             name="email"
             type="text"
-            placeholder="Email Address"
+            placeholder="youremail@gmail.com"
             title="Email Adress"
             register={register}
             error={errors?.email?.message}
-            onChange={(e) => setEmail(e.target.value)}
           />
           <InputUserForm
-            onKeyUp={onKeyUpHandler}
             htmlFor="password"
             id="password"
             type="password"
-            placeholder="Password"
+            placeholder="password"
             name="password"
             title="Password"
             register={register}
             error={errors?.password?.message}
-            onChange={(e) => setPassword(e.target.value)}
           />
           <button
             className="inline-flex justify-center rounded-lg text-sm font-semibold py-2.5 px-4 bg-slate-900 text-white hover:bg-slate-700 w-full"
             type="submit"
-            onClick={(e) => handleSubmit(e)}
           >
             <span>Sign in to account</span>
           </button>

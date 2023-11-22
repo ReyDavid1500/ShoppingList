@@ -1,27 +1,3 @@
-export const shoppingList = [
-    {
-        id: 1,
-        name: "Compra Lider",
-        list: [
-            { id: 1, name: "Queso", isChecked: true },
-            { id: 2, name: "Yogur", isChecked: false },
-            { id: 3, name: "Leche", isChecked: true }
-        ],
-
-    },
-    {
-        id: 2,
-        name: "Compra Agrosuper",
-        list: [
-            { id: 1, name: "Kiwi", isChecked: true },
-            { id: 2, name: "Platano", isChecked: false },
-            { id: 3, name: "Frutilla", isChecked: true },
-            { id: 4, name: "Banana", isChecked: false }
-        ],
-
-    },
-];
-
 export const sortingOptions = [
     {
         id: 1,

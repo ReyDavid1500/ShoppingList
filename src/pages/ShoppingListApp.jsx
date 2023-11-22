@@ -5,7 +5,6 @@ import SideMenu from "../components/SideMenu";
 import {
   Bars3Icon,
   BuildingStorefrontIcon,
-  UserCircleIcon,
   ArrowRightOnRectangleIcon,
 } from "@heroicons/react/24/outline";
 import Tooltip from "../components/Tooltip";
@@ -19,7 +18,7 @@ const ShoppingListApp = () => {
   const { loggedIn, setLoggedIn } = useContext(UserContext);
   const { setServerData, setSelectedListData } = useContext(ShoppingContext);
   const { showSnackbar } = useContext(SnackbarContext);
-  const { setIsLoading, isLoading } = useContext(LoaderContext);
+  const { setIsLoading } = useContext(LoaderContext);
 
   const [isSideMenu, setIsSideMenu] = useState(true);
 
