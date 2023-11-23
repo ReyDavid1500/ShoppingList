@@ -35,7 +35,6 @@ const SignIn = () => {
 
   const onHandlerSubmit = async (data, e) => {
     e.preventDefault();
-    console.log(e);
     setIsLoading(true);
     try {
       const config = {

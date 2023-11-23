@@ -76,66 +76,64 @@ const SideMenu = ({ isSideMenu }) => {
   };
 
   return (
-    <div>
+    <>
+      <Modal
+        addState={newShoppingList}
+        isOpen={showModalList1}
+        onClose={(e) => {
+          setShowModalList1(false);
+          setModalCounter(0);
+        }}
+        onHandleAccept={onSubmit}
+        title="Nueva lista"
+      >
+        <input
+          className="bg-[#f1f3f4] focus:outline-none focus:border-b-blue-600 focus:border-b-2 border-b-[1px] border-black hover:bg-gray-100 p-2"
+          type="text"
+          placeholder="Nombre de la lista"
+          maxLength={201}
+          onChange={handleNewShoppingList}
+          onKeyUp={onKeyPressNewList}
+        />
+        <div className="flex place-content-end text-xs font-light">
+          <span>{modalCounter} / 200</span>
+        </div>
+      </Modal>
       {isSideMenu && (
-        <div>
-          <Modal
-            addState={newShoppingList}
-            isOpen={showModalList1}
-            onClose={(e) => {
-              setShowModalList1(false);
-              setModalCounter(0);
-            }}
-            onHandleAccept={onSubmit}
-            title="Nueva lista"
+        <aside className="flex flex-col justify-center sm:w-[40vw]">
+          <button
+            onClick={() => setShowModalList1(true)}
+            className="bg-[#fff] flex gap-4 border-2 rounded-full p-3 place-items-center h-10 shadow-xl hover:bg-blue-100 max-[640px]:w-[60vw] max-[640px]:mx-auto transition ease-linear delay-150 hover:scale-110 duration-500"
           >
-            <input
-              className="bg-[#f1f3f4] focus:outline-none focus:border-b-blue-600 focus:border-b-2 border-b-[1px] border-black hover:bg-gray-100 p-2"
-              type="text"
-              placeholder="Nombre de la lista"
-              maxLength={201}
-              onChange={handleNewShoppingList}
-              onKeyUp={onKeyPressNewList}
-            />
-            <div className="flex place-content-end text-xs font-light">
-              <span>{modalCounter} / 200</span>
-            </div>
-          </Modal>
-          <aside className="sm:w-36 flex flex-col justify-center">
-            <button
-              onClick={() => setShowModalList1(true)}
-              className="bg-[#fff] flex gap-4 border-2 rounded-full p-3 place-items-center transition ease-in-out h-10 shadow-xl hover:opacity-50 hover:bg-blue-100 hover:translate-y-1 hover:scale-105 max-[640px]:w-[60vw] max-[640px]:mx-auto"
-            >
-              <PlusIcon className="h-6 w-6 text-red-500" />
-              <p className="text-xs font-bold hover:text-black text-orange-600">
-                Nueva Lista
-              </p>
-            </button>
-            <div className="flex flex-col mt-3 mb-3 mx-auto text-sm">
-              <div className="flex flex-col border-none rounded-fullp-3 w-40 place-content-start">
-                <div className="flex flex-col font-light gap-4 peer">
-                  {backendData?.map((item) => (
-                    <span
-                      className={`hover:bg-gray-300 p-1 rounded-lg focus:bg-gray-500 cursor-pointer ${
-                        selectedList?._id === item._id &&
-                        "bg-gray-600 dark:bg-white text-white font-bold transition-all"
-                      }`}
-                      data-_id={item._id}
-                      onClick={handleSelectList}
-                      key={item._id}
-                    >
-                      <p>{item.name}</p>
-                      <p>{item.list?.length} artículos</p>
-                    </span>
-                  ))}
-                </div>
+            <PlusIcon className="h-6 w-6 text-red-500" />
+            <p className="text-xs font-bold hover:text-black text-orange-600">
+              Nueva Lista
+            </p>
+          </button>
+          <div className="flex flex-col mt-3 mb-3 text-sm">
+            <div className="flex flex-col border-none rounded-full p-3 place-content-start">
+              <div className="flex flex-col font-light gap-4">
+                {backendData?.map((item) => (
+                  <span
+                    className={`hover:bg-gray-300 p-1 rounded-lg focus:bg-gray-500 cursor-pointer ${
+                      selectedList?._id === item._id &&
+                      "bg-gray-600 dark:bg-white text-white font-bold transition-all"
+                    }`}
+                    data-_id={item._id}
+                    onClick={handleSelectList}
+                    key={item._id}
+                  >
+                    <p>{item.name}</p>
+                    <p>{item.list?.length} artículos</p>
+                  </span>
+                ))}
               </div>
             </div>
-            <hr />
-          </aside>
-        </div>
+          </div>
+          <hr />
+        </aside>
       )}
-    </div>
+    </>
   );
 };
 

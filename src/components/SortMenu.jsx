@@ -28,7 +28,7 @@ function SortMenu() {
       <div className="group relative inline-block mx-auto">
         <Tooltip title="Ordenar">
           <button
-            className="block focus:bg-gray-200 focus:delay-150 focus:duration-300 focus:rounded-full p-2 hover:bg-gray-200 hover:rounded-full"
+            className="block focus:bg-gray-200 focus:delay-150 focus:duration-300 focus:rounded-full p-2 hover:bg-gray-200 hover:rounded-full transition ease-linear delay-150 hover:scale-125 duration-500"
             type="button"
             onClick={() => {
               setOpenDropdown1(!openDropdown1);
@@ -41,7 +41,9 @@ function SortMenu() {
       {openDropdown1 && (
         <div
           ref={ref}
-          className="absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+          className={`absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none transition-opacity ease-linear delay-500 duration-[2000ms] opacity-0 ${
+            openDropdown1 && "opacity-100"
+          }`}
         >
           {sortingOptions.map((option) => (
             <div

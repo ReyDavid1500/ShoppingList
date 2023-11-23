@@ -228,7 +228,7 @@ function SettingMenu() {
       <div className="flex flex-col">
         <Tooltip title="Más">
           <button
-            className="block focus:bg-gray-200 focus:delay-150 focus:duration-300 focus:rounded-full p-2 hover:bg-gray-200 hover:rounded-full"
+            className="block focus:bg-gray-200 focus:delay-150 focus:duration-300 focus:rounded-full p-2 hover:bg-gray-200 hover:rounded-full transition ease-linear delay-150 hover:scale-125 duration-500"
             type="button"
             onClick={() => {
               setOpenDropdown2(!openDropdown2);

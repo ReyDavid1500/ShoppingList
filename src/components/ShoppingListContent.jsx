@@ -193,9 +193,12 @@ const ShoppingListContent = () => {
               );
             })}
           </ul>
-          <div className="block z-[1] bottom-4 right-4 fixed">
-            <button onClick={() => setShowModalList2(true)}>
-              <PlusIcon className="h-12 w-12 text-red-500 rounded-full shadow-lg border border-collapse p-3 transition-opacity hover:opacity-40 hover:bg-slate-500 dark:bg-white" />
+          <div className="block z-[1] bottom-4 right-4 fixed ">
+            <button
+              className="hover:rotate-180 transition ease-linear delay-150 hover:-translate-y-0 duration-500"
+              onClick={() => setShowModalList2(true)}
+            >
+              <PlusIcon className="h-12 w-12 text-red-500 rounded-full shadow-lg border border-collapse p-3 transition-opacity hover:bg-slate-500/40 dark:bg-white " />
             </button>
           </div>
         </main>
@@ -214,7 +217,7 @@ const ShoppingListContent = () => {
         </div>
       )}
       {selectedList?.list?.length === 0 && (
-        <div className="fixed left-[50%] top-[25%] flex flex-col gap-3 mt-20 mx-auto">
+        <div className="fixed left-[50%] top-[25%] flex flex-col gap-3 mt-20 mx-auto max-[640px]:hidden">
           <img
             className="rounded-xl"
             src="https://images.unsplash.com/photo-1623265300797-4a3541e29a60?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"

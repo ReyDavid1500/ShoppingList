@@ -107,7 +107,10 @@ const ShoppingListApp = () => {
       <header className="sm:flex sm:justify-between bg-gray-100 w-full sm:h-10 shadow-lg sm:place-items-center sm:flex-row sm:mt-0 flex flex-col-reverse gap-2 justify-center items-center p-5 dark:bg-black dark:text-white">
         <div className="flex gap-4">
           <div className="side-menu">
-            <button onClick={handleSideMenuToggle}>
+            <button
+              className="transition ease-linear delay-150 hover:scale-125 duration-500"
+              onClick={handleSideMenuToggle}
+            >
               <Bars3Icon className="h-6 w-6 text-black cursor-pointer hover:opacity-30 dark:text-white" />
             </button>
           </div>
@@ -127,14 +130,16 @@ const ShoppingListApp = () => {
           </p>
           <Tooltip title="Logout">
             <button
-              className=" focus:bg-gray-200 focus:delay-150 focus:duration-300 focus:rounded-full hover:bg-gray-200 hover:rounded-full dark:hover:bg-gray-500"
+              className=" focus:bg-gray-200 focus:delay-150 focus:duration-300 focus:rounded-full hover:bg-gray-200 hover:rounded-full dark:hover:bg-gray-500 transition ease-linear delay-150 hover:scale-125 duration-500"
               onClick={handleLogout}
               type="button"
             >
               <ArrowRightOnRectangleIcon className="h-6 w-6 text-black cursor-pointer dark:text-white" />
             </button>
           </Tooltip>
-          <DarkModeSwitch isDarkModeOn={themeHandler} />
+          <span className="transition ease-linear delay-150 hover:scale-125 duration-500">
+            <DarkModeSwitch isDarkModeOn={themeHandler} />
+          </span>
         </div>
       </header>
       <div className="sm:flex sm:gap-10 p-[2rem] mt-2 sm:w-full sm:flex-row flex flex-col gap-4">
