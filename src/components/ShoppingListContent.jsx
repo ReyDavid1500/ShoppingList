@@ -158,9 +158,8 @@ const ShoppingListContent = () => {
           </div>
           <form className="mt-4" onSubmit={(e) => e.preventDefault()}>
             <label className="flex flex-row gap-3 mb-3">
-              <PlusIcon className="h-6 w-6 text-black inline-block dark:text-white" />
               <input
-                className="w-full pb-2 pl-2 pt-1 border-solid border-b-[rgb(95,99,104)] border-b-[1px] z-[1] content-none focus:outline-none focus:border-b-[rgb(25,103,210)] focus:border-b-2 focus:transition focus:ease-linear focus:delay-150 dark:rounded-lg"
+                className="w-full pb-2 pl-2 pt-1 border-solid border-[rgb(95,99,104)] border-[1px] z-[1] rounded-xl content-none focus:outline-none focus:border-[rgb(25,103,210)] focus:border-2 dark:rounded-lg"
                 type="text"
                 placeholder="Carne, queso, leche, ..."
                 autoComplete="off"
